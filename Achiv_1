@@ -1,0 +1,36 @@
+# Achivement #1
+
+  Serial.begin(9600);
+  Serial1.begin(9600);
+  int time = millis();
+  unsigned long next_time1;
+  unsigned long next_time2;
+  int TIMER1_INTERVAL = 500;
+  int TIMER2_INTERVAL = 500;
+  char[] TIMER1_STR = "ping\r\n";
+  char[] TIMER2_STR = "pong\r\n";
+  boolean flag = false;
+  boolean flag1 = true;
+  void setup()
+  {
+    if (flag == false){
+        next_time_1 = millis() + TIMER1_INTERVAL;
+        flag = true;
+    } else {
+        next_time_2 = millis() + TIMER2_INTERVAL;
+        flag = false;
+    }
+  }
+
+void loop() 
+{
+   if (flag == true) {
+     for (int i = 0; i < TIMER1_STR.length; i++){
+       Serial.print(TIMER1_STR[i]); // пишет Пинг
+     }
+   } else {
+     for (int i = 0; i < TIMER2_STR.length; i++){
+       Serial2.print(TIMER2_STR[i]); // Пишет Понг
+     } 
+   }
+}
