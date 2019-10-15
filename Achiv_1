@@ -10,7 +10,7 @@
   char[] TIMER1_STR = "ping\r\n";
   char[] TIMER2_STR = "pong\r\n";
   boolean flag = false;
-  boolean flag1 = true;
+  
   void setup()
   {
     if (flag == false){
